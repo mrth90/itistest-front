@@ -1,0 +1,12 @@
+controllers:
+    resource:
+        path: ../src/Controller/
+        namespace: App\Controller
+    type: attribute
+auth_google:
+    path: /authentication
+    controller: App\Controller\AuthenticationController::googleAuth
+
+auth_google_callback:
+    path: /authentication/callback
+    controller: App\Controller\AuthenticationController::googleCallback

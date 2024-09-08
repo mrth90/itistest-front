@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}List Header Process!{% endblock %}
+
+{% block body %}
+       <h1 class="h2">List Header Process</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Data Filename</th>
+                    <th scope="col">ETL Filename</th>
+                    <th scope="col">Execution_date</th>
+                    <th scope="col">created_at</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for headerProc in headerProcesses %}
+                    <tr>            
+                        <td scope="row">{{ headerProc.id }}</td>
+                        <td scope="row">{{ headerProc.datafilename }}</td>
+                        <td scope="row">{{ headerProc.etlfilename }}</td>
+                        <td>{{ headerProc.executiondate|format_date('short') }}</td>
+                        <td>{{ headerProc.createdat|format_date('short') }}</td>                        
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <h1 class="h2">Search Summary</h1>
+
+        <div id="app"></div>
+{% endblock %}
